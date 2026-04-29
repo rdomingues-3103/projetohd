@@ -1,5 +1,8 @@
+/* Use Reset CSS em tudo do Israel */
 * {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /* Variáveis CSS */
@@ -7,6 +10,9 @@
     --color-light: #f4f4f4;
     --color-dark: #222;
     --color-orange: #ff6600;
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacing-lg: 30px;
 }
 
 html {
@@ -36,8 +42,9 @@ ul, ol {
 .hero {
     color: var(--color-light);
     height: 100vh;
-    padding-inline: 30px;
-    background-image: url(../images/motos/banner.jpg);
+    padding-inline: var(--spacing-md);
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .8), rgba(0, 0, 0, .4)),
+    url(../images/motos/banner.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -47,15 +54,64 @@ ul, ol {
 .hero-header {
 height: 100px;
 display: flex;
-align-itens: flex-start;
+align-items: flex-start;
 justify-content: space-between;
 
 }
 
 .hero-menu {
    display: flex; 
-   gap: 20px;
+   gap: var(--spacing-md);
 
+}
+
+
+.cta {
+height: calc(100vh - 100px);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: var(--spacing-lg);
+text-align: center;
+
+}
+
+.cpa h2 {
+ font-size: 8vmin;
+
+}
+
+.cta p {
+width: 80%;
+line-height: 1.6;
+text-wrap: balance;
+}
+
+.btn {
+border: 2px solid var(--color-orange);
+border-radius: 80px;
+padding: var(--spacing-sm) var(--spacing-lg);
+background-color: var(--color-orange);
+transition: .5s ;
+}
+
+.btn:hover {
+    background-color: transparent;
+}
+.icon {
+    animation: motinho 2s infinite linear ;
+}
+/* Animando a moto */
+
+@keyframes motinho {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px);
+    }
 }
 
 .container {
